@@ -14,13 +14,10 @@ class Poll extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'title'=>mb_strimwidth($this->title, 0, 5,"...")
-        ];
-
-        public function questions()
-        {
-            return $this->hasMany('App\Question');
-        }
+        // return [
+        //     'title'=>mb_strimwidth($this->title, 0, 5,"...")
+        // ];
+        return Parent::toArray($request);
+        
     }
 }
