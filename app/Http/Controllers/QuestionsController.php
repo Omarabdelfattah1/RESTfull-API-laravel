@@ -26,7 +26,9 @@ class QuestionsController extends Controller
     public function store(Request $request)
     {
         $rules=[
-            'title'=>'required|max:225'
+            'title'=>'required|max:225',
+            'question'=>'required',
+            'poll_id'=>'required'
         ];
         $Validator=Validator::make($request->all(),$rules);
         if ($Validator->fails()) {
